@@ -1,6 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import tournamentSlices from "./Slices/tournamentSlices";
+import gameSlices from "./Slices/gameSlices";
 
-export const store = configureStore({
-  reducer: {},
+export default configureStore({
+  reducer: {
+    tournament: tournamentSlices,
+    game: gameSlices,
+  },
 });
-

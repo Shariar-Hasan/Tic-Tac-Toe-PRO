@@ -12,10 +12,13 @@ export const InfoCard = ({ info: { title, description, icon, link } }) => {
 
                     <div className="inline-block md:col-span-2 col-span-1">
                         <h2 className="text-xl bord er-b pb-2">{title}</h2>
-                        <p className="font-thin font-mono">{description}</p><button className="btn btn-primary w-full inline-block click-effect" onClick={() => navigate(link)}>Play Now</button>
+                        {description.map((desc, i) =>
+                            <p key={i} className="font-thin font-mono">{desc} </p>
+                        )}
+                        <button className="btn btn-primary w-full inline-block click-effect" onClick={() => navigate(link)}>Play Now</button>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
