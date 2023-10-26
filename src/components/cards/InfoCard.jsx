@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 export const InfoCard = ({ info: { title, description, icon, link } }) => {
     const navigate = useNavigate()
     return (
-        <div className="col-span-1 ">
+        <div className="col-span-1 mx-auto">
             <div className="px-4 py-3 bg-front text-site rounded-md shadow-md h-full">
                 <div className="grid md:grid-cols-3 grid-cols-1 justify-between items-center text-center md:text-left">
                     <div className="col-span-1 flex justify-center items-center">

@@ -1,12 +1,10 @@
-import { createBrowserRouter } from "react-router-dom"
+import { Navigate, createBrowserRouter } from "react-router-dom"
 import Home from "../../pages/Home"
 import Contributors from "../../pages/Contributors"
 import NotFound from "../../pages/NotFound"
-import SinglePlayerPage from "../../pages/SinglePlayerPage"
-import MultiPlayerPage from "../../pages/MultiPlayerPage"
-import TournamentPage from "../../pages/TournamentPage"
 import App from "../../App"
 import About from "../../pages/About"
+import GamePage from "../../pages/GamePage"
 export const routeDatas = [
     {
         title: "Home",
@@ -33,27 +31,11 @@ export const routeDatas = [
         children: []
     },
     {
-        title: "Single Player",
+        title: "Game Board",
         isNavItem: false,
         isVisible: true,
-        path: "/single_player_play",
-        element: <SinglePlayerPage />,
-        children: []
-    },
-    {
-        title: "Multiple Player",
-        isNavItem: false,
-        isVisible: true,
-        path: "/multiple_player_play",
-        element: <MultiPlayerPage />,
-        children: []
-    },
-    {
-        title: "Tournament",
-        isNavItem: false,
-        isVisible: true,
-        path: "/tournament",
-        element: <TournamentPage />,
+        path: "gamemode/:mode",
+        element: <GamePage />,
         children: []
     },
     {
@@ -61,6 +43,14 @@ export const routeDatas = [
         isNavItem: false,
         isVisible: true,
         path: "/*",
+        element: <Navigate to="/404" />,
+        children: []
+    },
+    {
+        title: "Page Not Found",
+        isNavItem: false,
+        isVisible: true,
+        path: "/404",
         element: <NotFound />,
         children: []
     },

@@ -1,4 +1,4 @@
-export const initialBoard = ["", "", "", "", "", "", "", "", ""];
+export let board = ["", "", "", "", "", "", "", "", ""];
 export const resetData = {
   match: 0,
   won: 0,

@@ -11,11 +11,11 @@ const AllCommonComponents = () => {
                 hideProgressBar
                 newestOnTop
                 closeOnClick
-                rtl
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover
                 theme="light"
+                toastClassName={"bg-brand text-white"}
             />
         </>
     )

@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+  board: ["", "", "", "", "", "", "", "", ""],
   isGameRunning: false,
   isTournament: false,
   isMultiplayer: false,
   isAgainstRobot: true,
+  currentPlayer: "X",
   leaderBoard: {
     totalMatch: 0,
     playerXwon: 0,
@@ -37,6 +39,15 @@ export const gameSlice = createSlice({
     setGameRunningStatus: (state, { payload }) => {
       state.isGameRunning = payload;
     },
+    updateBoard: (state, { payload }) => {
+      state.board = payload;
+    },
+    clearBoard: (state) => {
+      state.board = ["", "", "", "", "", "", "", "", ""];
+    },
+    changeCurrentPlayer: (state) => {
+      state.currentPlayer = state.currentPlayer === "X" ? "O" : "X";
+    },
     // for multiplayer
     setMultiplayerStatus: (state, { payload }) => {
       state.isMultiplayer = payload;
@@ -56,6 +67,9 @@ export const {
   incPlayerXdraw,
   incPlayerXlost,
   incPlayerXwon,
+  updateBoard,
+  clearBoard,
+  changeCurrentPlayer,
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

@@ -1,10 +1,10 @@
 
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import PopupModal from './PopupModal'
 import { useForm } from "react-hook-form"
 import { BsFillSendFill } from "react-icons/bs"
 import { FaTimes } from "react-icons/fa"
-import { errorNotify } from '../assets/helperFunctions'
+import { errorNotify } from '../../assets/helperFunctions'
 const UserDataModal = ({ isOpen, setIsOpen }) => {
     const { register, reset, watch, formState: { errors }, handleSubmit } = useForm()
     const formval = watch()

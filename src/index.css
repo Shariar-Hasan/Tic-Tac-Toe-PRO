@@ -1,8 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root {
+  --brand-color: #16a085;
+}
 body {
   @apply bg-back;
+}
+.no-scrollbar::-webkit-scrollbar {
+  @apply hidden;
 }
 @layer components {
   .btn {
@@ -22,6 +28,62 @@ body {
   }
   .text-site {
     @apply text-gray-50;
+  }
+  .box {
+    @apply rounded-md shadow-md border border-brand;
+  }
+
+  /* brand ui section  */
+  .bg-brand {
+    @apply bg-[var(--brand-color)];
+  }
+  .text-brand {
+    @apply text-[var(--brand-color)];
+  }
+  .border-brand {
+    @apply border-[var(--brand-color)];
+  }
+  /* game board section  */
+  .cell {
+    @apply bg-front aspect-square cursor-pointer;
+  }
+  .gameboard {
+    @apply bg-white;
+  }
+  .gameboard .cell {
+    @apply aspect-square flex justify-center items-center bg-back border-2 border-transparent;
+  }
+
+  .cell:hover:not(.X, .O) {
+    @apply cursor-pointer transition-all duration-150 ease-in-out border-green-600 bg-front;
+  }
+  .cell.X,
+  .cell.O {
+    @apply relative cursor-not-allowed;
+  }
+
+  /* design for X  */
+  .X {
+    @apply after:absolute after:top-[50%] after:left-0 after:mx-auto after:w-full after:h-[2px] after:bg-slate-300 before:absolute before:top-[50%] before:left-0 before:mx-auto before:w-full before:h-[2px] before:bg-slate-300 after:rotate-[45deg] after:-translate-y-[50%] before:rotate-[135deg] before:-translate-y-[50%];
+  }
+  .X::after {
+    transform: rotateZ(45deg) translateY(-50%);
+  }
+  .X::before {
+    transform: rotateZ(135deg) translateY(-50%);
+  }
+
+  /* design for O  */
+  .O::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    margin: 0 auto;
+    width: 80%;
+    height: 80%;
+    border: 3px solid white;
+    border-radius: 50%;
   }
 }
 

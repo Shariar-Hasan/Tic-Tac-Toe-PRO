@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 const NotFound = () => {
     const navigate = useNavigate()
     return (
-        <div className="w-screen h-[90vh] flex justify-center items-center">
+        <div className="w-screen h-[80vh] flex justify-center items-center">
             <div className="flex flex-col text-center">
                 <h1 className="text-4xl  mb-3">
                     <BiSolidMessageError className="mx-auto text-red-600" />
