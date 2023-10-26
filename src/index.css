@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  @apply bg-back;
+}
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded outline-none;
+  }
+  .btn-primary {
+    @apply text-gray-100 bg-primary;
+  }
+  .btn-secondary {
+    @apply text-gray-100 bg-secondary;
+  }
+  .bg-back {
+    @apply bg-slate-950;
+  }
+  .bg-front {
+    @apply bg-slate-900;
+  }
+  .text-site {
+    @apply text-gray-50;
+  }
+}
+
+@layer utilities {
+  .click-effect {
+    @apply active:scale-[.993];
+  }
+}
